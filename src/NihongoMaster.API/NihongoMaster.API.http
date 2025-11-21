@@ -1,0 +1,6 @@
+@NihongoMaster.API_HostAddress = http://localhost:5105
+
+GET {{NihongoMaster.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
