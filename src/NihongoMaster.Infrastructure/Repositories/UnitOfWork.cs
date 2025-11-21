@@ -12,6 +12,7 @@ public class UnitOfWork : IUnitOfWork
     public UnitOfWork(ApplicationContext context)
     {
         _context = context;
+        _repositories = [];
     }
     public async Task<int> CompleteAsync()
     {
@@ -25,8 +26,6 @@ public class UnitOfWork : IUnitOfWork
 
     public IRepository<T> Repository<T>() where T : class
     {
-        _repositories ??= [];
-
         var type = typeof(T).Name;
 
         // check key
