@@ -19,6 +19,8 @@ public class Repository<T> : IRepository<T> where T : class
 
     public async Task AddAsync(T entity) => await dbSet.AddAsync(entity);
 
+    public async Task<bool> AnyAsync(Expression<Func<T, bool>> predicate) => await dbSet.AnyAsync(predicate);
+
     public Task DeleteAsync(T entity)
     {
         dbSet.Remove(entity);
